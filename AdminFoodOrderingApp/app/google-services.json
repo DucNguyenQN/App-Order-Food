@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "342288584416",
+    "project_id": "foodorderingapp-b8079",
+    "storage_bucket": "foodorderingapp-b8079.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342288584416:android:49bd41dde145d07fceca85",
+        "android_client_info": {
+          "package_name": "com.example.adminfoodorderingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342288584416-kksoq30pideupgc3oj86f4tn74m8hgnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCjr9GDGIlvE-RBf17qIAg51FgvAqxBOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342288584416-kksoq30pideupgc3oj86f4tn74m8hgnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342288584416:android:f764edbaa3e867d8ceca85",
+        "android_client_info": {
+          "package_name": "com.example.foodorderingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342288584416-0poiqido7a7nc9g0qr7lum9goombdpr6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.foodorderingapp",
+            "certificate_hash": "f775d32e54c65461de5d6ce343b961df0db41e15"
+          }
+        },
+        {
+          "client_id": "342288584416-kksoq30pideupgc3oj86f4tn74m8hgnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCjr9GDGIlvE-RBf17qIAg51FgvAqxBOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342288584416-kksoq30pideupgc3oj86f4tn74m8hgnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
