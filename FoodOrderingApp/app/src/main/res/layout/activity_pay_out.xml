@@ -23,14 +23,15 @@
             android:scaleType="centerCrop"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/arrow_left" />
+
         <TextView
             android:id="@+id/textView20"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/yeon_sung"
-            android:text="Edit"
+            android:text="Thanh toán"
             android:textColor="@color/textcolor"
             android:textSize="20sp" />
 
@@ -53,7 +54,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Name" />
+                android:text="Tên" />
 
             <EditText
                 android:id="@+id/payoutName"
@@ -84,7 +85,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Address" />
+                android:text="Địa chỉ" />
 
             <EditText
                 android:id="@+id/payoutAddress"
@@ -117,7 +118,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Phone" />
+                android:text="Điện thoại" />
 
             <EditText
                 android:id="@+id/payoutPhone"
@@ -148,7 +149,7 @@
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
                 android:fontFamily="@font/yeon_sung"
-                android:text="Payment Method" />
+                android:text="Phương thức thanh toán" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -177,7 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
-                android:text="Total Amount" />
+                android:text="Tổng tiền" />
 
             <TextView
                 android:id="@+id/payoutTotal"
@@ -199,7 +200,7 @@
         android:id="@+id/btnorder"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="Place My Order"
+        android:text="Thanh toán"
         android:textColor="@color/textcolor"
         android:textAllCaps="false"
         android:background="@drawable/edittextshape"

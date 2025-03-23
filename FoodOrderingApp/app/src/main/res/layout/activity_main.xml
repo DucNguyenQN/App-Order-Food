@@ -29,7 +29,7 @@
         android:layout_marginTop="32dp"
         android:textColor="@color/black"
         android:fontFamily="@font/yeon_sung"
-        android:text="Explore Your Favorite Food"
+        android:text="Tìm kiếm món ăn yêu thích của bạn"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

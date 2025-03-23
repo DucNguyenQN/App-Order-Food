@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="Recent Buy"
+            android:text="Mua gần nhất"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -112,7 +112,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/lato"
-            android:text="Previously buy"
+            android:text="Lần mua trước"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2" />

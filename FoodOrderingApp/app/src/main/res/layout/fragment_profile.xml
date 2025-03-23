@@ -30,7 +30,7 @@
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:fontFamily="@font/yeon_sung"
-            android:text="Name"
+            android:text="Tên"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -61,7 +61,7 @@
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:fontFamily="@font/yeon_sung"
-            android:text="Address"
+            android:text="Địa chỉ"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -126,7 +126,7 @@
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:fontFamily="@font/yeon_sung"
-            android:text="Phone"
+            android:text="Điện thoại"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -140,19 +140,20 @@
             android:inputType="phone" />
     </LinearLayout>
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSaveInfo"
-        android:elevation="5dp"
-        android:layout_marginBottom="32dp"
-        android:textAllCaps="false"
-        android:background="@drawable/proceedbutonshape"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
-        android:textColor="@color/textcolor"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/proceedbutonshape"
+        android:elevation="5dp"
         android:fontFamily="@font/yeon_sung"
-        android:textSize="20sp"
-        android:text="Save Information"/>
+        android:text="Lưu thông tin"
+        android:textAllCaps="false"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp" />
 </FrameLayout>
