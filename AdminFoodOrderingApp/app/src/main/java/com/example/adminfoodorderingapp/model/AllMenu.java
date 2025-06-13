@@ -1,21 +1,29 @@
 package com.example.adminfoodorderingapp.model;
 
-public class AllMenu {
+import java.io.Serializable;
+
+public class AllMenu implements Serializable {
+    String id;
     String foodName;
     String foodPrice;
     String foodDescription;
     String foodIngredients;
     String foodImage;
+    String resId;
+    String nameOfRestaurance;
 
     public AllMenu() {
     }
 
-    public AllMenu(String foodName, String foodPrice, String foodDescription, String foodIngredients, String foodImage) {
+    public AllMenu(String id, String foodName, String foodPrice, String foodDescription, String foodIngredients, String foodImage, String resId, String nameOfRestaurance) {
+        this.id = id;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
         this.foodDescription = foodDescription;
         this.foodIngredients = foodIngredients;
         this.foodImage = foodImage;
+        this.resId = resId;
+        this.nameOfRestaurance = nameOfRestaurance;
     }
 
     public String getFoodName() {
@@ -56,5 +64,29 @@ public class AllMenu {
 
     public void setFoodImage(String foodImage) {
         this.foodImage = foodImage;
+    }
+
+    public String getResId() {
+        return resId;
+    }
+
+    public void setResId(String resId) {
+        this.resId = resId;
+    }
+
+    public String getNameOfRestaurance() {
+        return nameOfRestaurance;
+    }
+
+    public void setNameOfRestaurance(String nameOfRestaurance) {
+        this.nameOfRestaurance = nameOfRestaurance;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

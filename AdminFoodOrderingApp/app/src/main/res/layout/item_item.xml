@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -66,49 +67,16 @@
                 app:layout_constraintStart_toEndOf="@+id/cardView9" />
 
             <ImageButton
-                android:id="@+id/imgMinus"
+                android:id="@+id/btnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/icon_minus"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/txtQuanity"
-                app:layout_constraintEnd_toStartOf="@+id/txtQuanity"
-                app:layout_constraintTop_toTopOf="@+id/txtQuanity" />
-
-            <ImageButton
-                android:id="@+id/imgplus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_plus"
-                android:layout_marginEnd="16dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="16dp"/>
-
-            <TextView
-                android:id="@+id/txtQuanity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imgplus"
-                app:layout_constraintEnd_toStartOf="@+id/imgplus"
-                app:layout_constraintTop_toTopOf="@+id/imgplus" />
-
-            <ImageButton
-                android:id="@+id/imgTrash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/trash"
+                android:background="@color/white"
+                android:src="@drawable/baseline_edit_24"
+                android:layout_marginRight="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imgplus"
-                app:layout_constraintStart_toStartOf="@+id/imgMinus"
-                app:layout_constraintTop_toBottomOf="@+id/txtQuanity" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

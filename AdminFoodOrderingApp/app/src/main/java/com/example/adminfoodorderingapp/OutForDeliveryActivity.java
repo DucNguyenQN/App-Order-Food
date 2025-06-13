@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.adminfoodorderingapp.adapter.DeliveryAdapter;
 import com.example.adminfoodorderingapp.databinding.ActivityOutForDeliveryBinding;
 import com.example.adminfoodorderingapp.model.OrderDetails;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +31,8 @@ public class OutForDeliveryActivity extends AppCompatActivity {
     private DeliveryAdapter adapter;
     private FirebaseDatabase database;
     private List<OrderDetails> listOfComleteOrder = new ArrayList<>();
+    private String resId;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +45,12 @@ public class OutForDeliveryActivity extends AppCompatActivity {
             return insets;
         });
 
-        retriveCompleteOrderDetails();
+
         adapter = new DeliveryAdapter(this);
+        mAuth = FirebaseAuth.getInstance();
+        resId = mAuth.getCurrentUser().getUid();
+
+        retriveCompleteOrderDetails();
 
         binding.deliveryRecycle.setLayoutManager(new LinearLayoutManager(this));
         binding.backButton.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +63,7 @@ public class OutForDeliveryActivity extends AppCompatActivity {
 
     private void retriveCompleteOrderDetails() {
         database = FirebaseDatabase.getInstance();
-        Query completeOrderRef = database.getReference().child("CompleteOrder").orderByChild("currentTime");
+        Query completeOrderRef = database.getReference().child("CompleteOrder").child(resId).orderByChild("currentTime");
 
         completeOrderRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -80,15 +87,7 @@ public class OutForDeliveryActivity extends AppCompatActivity {
     }
 
     private void setDataInToRecycleView() {
-        List<String> customerName = new ArrayList<>();
-        List<Boolean> MoneyStatus = new ArrayList<>();
-        for (OrderDetails order : listOfComleteOrder){
-            if (order.getUserName() != null){
-                customerName.add(order.getUserName());
-            }
-            MoneyStatus.add(order.getPaymentReceived());
-        }
-        adapter.setData(customerName, MoneyStatus);
+        adapter.setData(listOfComleteOrder);
         binding.deliveryRecycle.setAdapter(adapter);
     }
 }

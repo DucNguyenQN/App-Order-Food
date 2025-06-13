@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/yeon_sung"
-                android:text="Order Details"
+                android:text="Chi tiết đơn hàng"
                 android:textColor="@color/black"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Name" />
+                android:text="Tên" />
 
             <EditText
                 android:id="@+id/Name"
@@ -97,7 +97,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Address" />
+                android:text="Địa chỉ" />
 
             <EditText
                 android:id="@+id/Address"
@@ -132,7 +132,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Phone" />
+                android:text="Điện thoại" />
 
             <EditText
                 android:id="@+id/Phone"
@@ -164,7 +164,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/yeon_sung"
                 android:paddingLeft="8dp"
-                android:text="Total Amount" />
+                android:text="Tổng tiền" />
 
             <EditText
                 android:id="@+id/total"

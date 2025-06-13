@@ -1,6 +1,8 @@
 package com.example.adminfoodorderingapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adminfoodorderingapp.adapter.MenuItemAdapter;
 import com.example.adminfoodorderingapp.model.AllMenu;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,8 +29,11 @@ public class AllItemActivity extends AppCompatActivity {
     RecyclerView Recycle;
     DatabaseReference databaseReference;
     FirebaseDatabase database;
+    FirebaseAuth mAuth;
     List<AllMenu> menuItems = new ArrayList<>();
+    String userId;
     MenuItemAdapter adapter;
+    ImageButton backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +45,18 @@ public class AllItemActivity extends AppCompatActivity {
             return insets;
         });
         InnitView();
+        mAuth  = FirebaseAuth.getInstance();
+        userId = mAuth.getCurrentUser().getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         adapter = new MenuItemAdapter(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL,false);
         Recycle.setLayoutManager(linearLayoutManager);
-
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         retriveMenuItem();
     }
 
@@ -51,7 +64,7 @@ public class AllItemActivity extends AppCompatActivity {
 
     private void retriveMenuItem() {
         database = FirebaseDatabase.getInstance();
-        DatabaseReference foodRef = database.getReference().child("menu");
+        DatabaseReference foodRef = database.getReference().child("user").child(userId).child("menu");
         foodRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -73,5 +86,6 @@ public class AllItemActivity extends AppCompatActivity {
     }
     private void InnitView() {
         Recycle = findViewById(R.id.RecycleMenu);
+        backButton = findViewById(R.id.backButton);
     }
 }

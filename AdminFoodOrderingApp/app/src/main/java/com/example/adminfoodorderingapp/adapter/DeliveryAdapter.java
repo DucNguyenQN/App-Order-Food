@@ -1,24 +1,28 @@
 package com.example.adminfoodorderingapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.adminfoodorderingapp.DetailsDeliveryActivity;
 import com.example.adminfoodorderingapp.databinding.DeliveryItemBinding;
 import com.example.adminfoodorderingapp.model.AllMenu;
+import com.example.adminfoodorderingapp.model.OrderDetails;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>{
-    private List<String> customerNames;
-    private List<Boolean> moneyStatus;
+    List<OrderDetails> orderDetailsList;
     private Context context;
     @NonNull
     @Override
@@ -31,20 +35,20 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.Delive
         this.context = context;
     }
 
-    public void setData(List<String> customerNames, List<Boolean> moneyStatus){
-        this.customerNames = customerNames;
-        this.moneyStatus = moneyStatus;
+    public void setData(List<OrderDetails> orderDetailsList){
+        this.orderDetailsList = orderDetailsList;
         notifyDataSetChanged();
     }
     @Override
     public void onBindViewHolder(@NonNull DeliveryViewHolder holder, int position) {
-        holder.bind(position);
+        OrderDetails orderDetails = orderDetailsList.get(position);
+        holder.bind(orderDetails);
     }
 
     @Override
     public int getItemCount() {
-        if (customerNames != null){
-            return customerNames.size();
+        if (orderDetailsList != null){
+            return orderDetailsList.size();
         }
         return 0;
     }
@@ -56,12 +60,12 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.Delive
             this.binding = binding;
         }
 
-        public void bind(int position) {
-            binding.customerName.setText(customerNames.get(position));
-            if (moneyStatus.get(position) == true){
-                binding.moneyStatus.setText("Received");
+        public void bind(OrderDetails orderDetails) {
+            binding.customerName.setText(orderDetails.getUserName());
+            if (orderDetails.getPaymentReceived() == true){
+                binding.moneyStatus.setText("Đã nhận");
             }else{
-                binding.moneyStatus.setText("Not Received");
+                binding.moneyStatus.setText("Chưa nhận");
             }
 
             Map<Boolean, Integer> colorMap = new HashMap<>();
@@ -69,8 +73,18 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.Delive
             colorMap.put(false, Color.RED);
 
 //          binding.moneyStatus.setTextColor(colorMap.get(moneyStatus.get(position)));
-            binding.moneyStatus.setTextColor(colorMap.getOrDefault(moneyStatus.get(position), Color.BLACK));
-            binding.statusColor.setBackgroundTintList(ColorStateList.valueOf(colorMap.getOrDefault(moneyStatus.get(position), Color.BLACK)));
+            binding.moneyStatus.setTextColor(colorMap.getOrDefault(orderDetails.getPaymentReceived(), Color.BLACK));
+            binding.statusColor.setBackgroundTintList(ColorStateList.valueOf(colorMap.getOrDefault(orderDetails.getPaymentReceived(), Color.BLACK)));
+            binding.cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, DetailsDeliveryActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("itemDetail", orderDetails);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

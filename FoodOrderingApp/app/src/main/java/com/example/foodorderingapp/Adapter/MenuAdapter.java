@@ -26,8 +26,10 @@ import com.example.foodorderingapp.DetailsActivity;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.model.MenuItem;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder>{
     private List<MenuItem> menuItems;
@@ -54,7 +56,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         MenuItem menuItem = menuItemsFilter.get(position);
         Glide.with(context).load(menuItem.getFoodImage()).into(holder.menuImage);
         holder.txtMenuFoodName.setText(menuItem.getFoodName());
-        holder.txtMenuPrice.setText(menuItem.getFoodPrice());
+        holder.txtMenuPrice.setText(formatStringNumber(menuItem.getFoodPrice()) + " VND");
         holder.menu_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +76,17 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         }
         return 0;
     }
-
+    private String formatStringNumber(String numberString) {
+        try {
+            String cleanedString = numberString.replaceAll("[^\\d]", "");
+            int number = Integer.parseInt(cleanedString);
+            NumberFormat formatter = NumberFormat.getInstance(Locale.getDefault());
+            return formatter.format(number);
+        } catch (NumberFormatException e) {
+            Log.e("Format Error", "Không thể chuyển đổi chuỗi thành số: " + numberString);
+            return numberString; // Trả về chuỗi gốc nếu có lỗi
+        }
+    }
     public class MenuViewHolder extends RecyclerView.ViewHolder {
         private ImageView menuImage;
         private TextView txtMenuFoodName, txtMenuPrice;

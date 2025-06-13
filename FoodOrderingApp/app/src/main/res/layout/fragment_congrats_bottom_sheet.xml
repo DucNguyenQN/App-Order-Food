@@ -35,7 +35,7 @@
             android:id="@+id/gohome"
             android:layout_width="157dp"
             android:layout_height="57dp"
-            android:text="Quay lại"
+            android:text="Trang chủ"
             android:textAllCaps="false"
             android:fontFamily="@font/yeon_sung"
             android:layout_gravity="center"

@@ -1,8 +1,9 @@
 package com.example.foodorderingapp.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class OrderDetails {
+public class OrderDetails implements Serializable {
     private String userId;
     private String userName;
     private String address;
@@ -13,11 +14,12 @@ public class OrderDetails {
     private String itemPushKey;
     private Long currentTime = 0L;
     private List<CartItems> cartItems;
+    private String resId;
 
     public OrderDetails() {
     }
 
-    public OrderDetails(String userId, String userName, String address, String totalPrice, String phoneNumber, Boolean orderAcceppted, Boolean paymentReceived, String itemPushKey, Long currentTime, List<CartItems> cartItems) {
+    public OrderDetails(String userId, String userName, String address, String totalPrice, String phoneNumber, Boolean orderAcceppted, Boolean paymentReceived, String itemPushKey, Long currentTime, List<CartItems> cartItems, String resId) {
         this.userId = userId;
         this.userName = userName;
         this.address = address;
@@ -28,6 +30,7 @@ public class OrderDetails {
         this.itemPushKey = itemPushKey;
         this.currentTime = currentTime;
         this.cartItems = cartItems;
+        this.resId = resId;
     }
 
     public String getUserId() {
@@ -108,5 +111,13 @@ public class OrderDetails {
 
     public void setItemPushKey(String itemPushKey) {
         this.itemPushKey = itemPushKey;
+    }
+
+    public String getResId() {
+        return resId;
+    }
+
+    public void setResId(String resId) {
+        this.resId = resId;
     }
 }

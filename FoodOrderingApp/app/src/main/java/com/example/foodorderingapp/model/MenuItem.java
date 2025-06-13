@@ -3,21 +3,27 @@ package com.example.foodorderingapp.model;
 import java.io.Serializable;
 
 public class MenuItem implements Serializable {
+    private String id;
     private String foodName;
     private String foodPrice;
     private String foodDescription;
     private String foodImage;
     private String foodIngredients;
+    private String resId;
+    private String nameOfRestaurance;
 
     public MenuItem() {
     }
 
-    public MenuItem(String foodName, String foodPrice, String foodDescription, String foodImageUrl, String foodIngredients) {
+    public MenuItem(String id, String foodName, String foodPrice, String foodDescription, String foodImage, String foodIngredients, String resId, String nameOfRestaurance) {
+        this.id = id;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
         this.foodDescription = foodDescription;
-        this.foodImage = foodImageUrl;
+        this.foodImage = foodImage;
         this.foodIngredients = foodIngredients;
+        this.resId = resId;
+        this.nameOfRestaurance = nameOfRestaurance;
     }
 
     public String getFoodName() {
@@ -58,5 +64,29 @@ public class MenuItem implements Serializable {
 
     public void setFoodIngredients(String foodIngredients) {
         this.foodIngredients = foodIngredients;
+    }
+
+    public String getResId() {
+        return resId;
+    }
+
+    public void setResId(String resId) {
+        this.resId = resId;
+    }
+
+    public String getNameOfRestaurance() {
+        return nameOfRestaurance;
+    }
+
+    public void setNameOfRestaurance(String nameOfRestaurance) {
+        this.nameOfRestaurance = nameOfRestaurance;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

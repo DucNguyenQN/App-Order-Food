@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_history">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/menu_item"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/nameRestaurance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="NameOfRestaurance"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/menuImage"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameRestaurance"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txtMenuFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/yeon_sung"
+                android:maxLength="25"
+                android:text="Food Name"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/timeOrder"
+                app:layout_constraintStart_toEndOf="@+id/menuImage"
+                app:layout_constraintTop_toBottomOf="@+id/nameRestaurance" />
+
+            <TextView
+                android:id="@+id/timeOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="30/04/2025"
+                app:layout_constraintBottom_toBottomOf="@+id/menuImage"
+                app:layout_constraintStart_toEndOf="@+id/menuImage"
+                app:layout_constraintTop_toBottomOf="@+id/txtMenuFoodName"
+                app:layout_constraintVertical_bias="0.481" />
+
+            <TextView
+                android:id="@+id/txtMenuPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:text="$5"
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.842"
+                app:layout_constraintStart_toEndOf="@+id/menuImage"
+                app:layout_constraintTop_toTopOf="@+id/txtMenuFoodName" />
+
+            <TextView
+                android:id="@+id/txtMenuAddToCart"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/addtocartshape"
+                android:gravity="center"
+                android:text="Mua lại"
+                app:layout_constraintEnd_toEndOf="@+id/txtMenuPrice"
+                app:layout_constraintStart_toStartOf="@+id/txtMenuPrice"
+                app:layout_constraintTop_toBottomOf="@+id/txtMenuPrice" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/addtocartshape"
+                android:text="Đã nhận được hàng"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/timeOrder"
+                app:layout_constraintTop_toBottomOf="@+id/txtMenuAddToCart" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnrating"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/addtocartshape"
+                android:text="Đánh giá"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/txtMenuAddToCart"
+                app:layout_constraintStart_toStartOf="@+id/txtMenuAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/txtMenuAddToCart" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

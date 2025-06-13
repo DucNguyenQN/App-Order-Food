@@ -59,7 +59,7 @@ public class SignActivity extends AppCompatActivity {
                 NameOfRestaurant = edtnameofrestaurant.getText().toString().trim();
 
                 if (UserName.isEmpty() || email.isEmpty() || password.isEmpty() || NameOfRestaurant.isEmpty()){
-                    Toast.makeText(SignActivity.this, "Please fill all details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignActivity.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 }else {
                     createAccount(email, password);
                 }
@@ -72,12 +72,12 @@ public class SignActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(SignActivity.this, "Accound Create Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignActivity.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
                     saveUserData();
                     startActivity(new Intent(SignActivity.this, LoginActivity.class));
                     finish();
                 }else {
-                    Toast.makeText(SignActivity.this, "Accound Create Fail", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignActivity.this, "Tạo tài khoản thất bại, vui lòng thử lại!", Toast.LENGTH_SHORT).show();
                     Log.d("createFail", task.getException()+"");
                 }
             }

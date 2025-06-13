@@ -1,23 +1,20 @@
 package com.example.foodorderingapp.model;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 
 public class CartItems implements Serializable {
+    private String id;
     private String foodName;
     private String foodPrice;
     private String foodDescription;
     private String foodImage;
     private int foodQuanity;
 
+
     public CartItems() {
     }
 
-    public CartItems(String foodName, String foodPrice, String foodDescription, String foodImage, int foodQuanity) {
+    public CartItems(String id, String foodName, String foodPrice, String foodDescription, String foodImage, int foodQuanity) {
+        this.id = id;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
         this.foodDescription = foodDescription;
@@ -63,5 +60,13 @@ public class CartItems implements Serializable {
 
     public void setFoodQuanity(int foodQuanity) {
         this.foodQuanity = foodQuanity;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

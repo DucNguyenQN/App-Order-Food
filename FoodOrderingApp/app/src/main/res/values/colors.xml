@@ -6,4 +6,5 @@
     <color name="startColor">#53E88B</color>
     <color name="endColor">#15BE77</color>
     <color name="teal_200">#FF03DAC5</color>
+    <color name="medium_gray">#252523</color>
 </resources>

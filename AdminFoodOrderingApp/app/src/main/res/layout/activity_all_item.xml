@@ -21,7 +21,7 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Item"
+        android:text="Tất cả món"
         android:fontFamily="@font/yeon_sung"
         android:textColor="@color/black"
         android:textSize="40sp"
